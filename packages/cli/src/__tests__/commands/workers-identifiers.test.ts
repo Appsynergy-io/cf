@@ -82,7 +82,7 @@ describe("cf workers identifiers", () => {
 			await runCf(["workers", ...args, flag, "my/worker", "--dry-run"], ENV);
 			const output = JSON.parse(String(logSpy.mock.calls[0]?.[0]));
 			expect(output).toMatchObject({
-				url: `https://api.cloudflare.com/client/v4/accounts/test-account${path.replace("my-worker", "my%2Fworker")}`,
+				url: `${ACCOUNT}${path.replace("my-worker", "my%2Fworker")}`,
 				pathParams: { worker: "my/worker" },
 			});
 		});

@@ -7,7 +7,26 @@
  * include the assembled request body (`body` / `bodyKind`). Read
  * commands set `bodyKind: 'none'` and omit `body`.
  */
+import {
+	COMPLIANCE_REGION_CONFIG_PUBLIC,
+	getCloudflareApiBaseUrl,
+} from "@cloudflare/workers-utils/compliance";
 import { formatOutput } from "./output.js";
+
+// Generated and hand-written dry runs name the public API base. A request resolves its base
+// through getCloudflareApiBaseUrl, which honours CLOUDFLARE_API_BASE_URL, so the dry run shows
+// that base.
+const PUBLIC_API_BASE_URL = "https://api.cloudflare.com/client/v4";
+
+function dryRunUrl(url: string): string {
+	if (!url.startsWith(PUBLIC_API_BASE_URL)) {
+		return url;
+	}
+	return (
+		getCloudflareApiBaseUrl(COMPLIANCE_REGION_CONFIG_PUBLIC) +
+		url.slice(PUBLIC_API_BASE_URL.length)
+	);
+}
 
 /**
  * Structured dry-run output data.
@@ -93,8 +112,9 @@ export function redactDryRunBody(
  */
 export function formatDryRun({
 	sensitiveBodyPaths,
-	...output
+	...input
 }: DryRunInput): void {
+	const output = { ...input, url: dryRunUrl(input.url) };
 	if (!sensitiveBodyPaths?.length) {
 		formatOutput(output);
 		return;

@@ -15,4 +15,7 @@
  * `@cloudflare/workers-utils/test-helpers`, called inside the relevant
  * `describe` block — matching the wrangler convention.
  */
+// OAuth requests are also intercepted by the native tests' MSW handlers.
+process.env.WRANGLER_AUTH_DOMAIN ??= "dash.cloudflare.com";
+
 export {};
