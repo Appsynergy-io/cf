@@ -101,6 +101,7 @@ export default defineConfig({
 			resolveDepSubpath: true,
 			// These packages require their own files beside the module at runtime.
 			neverBundle: [
+				"@cloudflare/workers-utils",
 				"blake3-wasm",
 				"miniflare",
 				...(testBundle

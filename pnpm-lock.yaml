@@ -257,6 +257,9 @@ importers:
       '@cloudflare/runtime-types':
         specifier: 0.1.26
         version: 0.1.26(@types/node@26.6.6)
+      '@cloudflare/workers-utils':
+        specifier: 0.53.1
+        version: 0.53.1(vitest@5.1.0)
       blake3-wasm:
         specifier: 2.1.5
         version: 2.1.5
@@ -297,9 +300,6 @@ importers:
       '@cloudflare/workers-auth':
         specifier: 0.18.1
         version: 0.18.1(msw@3.0.4(@types/node@26.6.6)(@voidzero-dev/vite-plus-core@1.5.0(@types/node@26.6.6)(esbuild@0.28.2)(tsx@4.21.0)(typescript@6.0.3)(unrun@0.2.39)(yaml@2.9.0))(graphql@16.14.2)(supports-color@10.2.2)(typescript@6.0.3))(vitest@5.1.0)
-      '@cloudflare/workers-utils':
-        specifier: 0.53.1
-        version: 0.53.1(vitest@5.1.0)
       '@types/node':
         specifier: 26.6.6
         version: 26.6.6

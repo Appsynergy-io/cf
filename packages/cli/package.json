@@ -72,6 +72,7 @@
 		"@cloudflare/build-output-utils": "0.9.13",
 		"@cloudflare/config": "0.32.0",
 		"@cloudflare/runtime-types": "0.1.26",
+		"@cloudflare/workers-utils": "0.53.1",
 		"blake3-wasm": "2.1.5",
 		"miniflare": "5.20261110.1-beta"
 	},
@@ -87,7 +88,6 @@
 		"@cloudflare/deploy-helpers": "0.26.3",
 		"@cloudflare/forge": "https://pkg.pr.new/cloudflare/forge/@cloudflare/forge@45c005a259a5507763d866e12d1e907af6ce745d",
 		"@cloudflare/workers-auth": "0.18.1",
-		"@cloudflare/workers-utils": "0.53.1",
 		"@types/node": "26.6.6",
 		"@types/semver": "7.8.0",
 		"@types/shell-quote": "^1.7.5",
